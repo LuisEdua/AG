@@ -24,7 +24,7 @@ def init(req : object):
     productos_indispensables = [Producto(**producto) for producto in req['productos_indispensables']]
     duracion = int(req['duracion'])
     monto = float(req['monto'])
-    intervalo = int(req['Intervalo'])
+    intervalo = int(req['intervalo'])
     categorias = req['categorias']
     pob_init = int(req['poblacion_inicial'])
     tamanio = int(req['size'])

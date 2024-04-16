@@ -1,13 +1,15 @@
 from datetime import datetime, timedelta
 
 class Producto:
-    def __init__(self, producto: str, precio: float, cantidad: int, categoria: str, duracion: int, fecha: str):
+    def __init__(self, uuid: str, producto: str, precio: float, cantidad: int, categoria: str, duracion: int, esIndispensable: str, fecha: str):
+        self.uuid : str = uuid
         self.producto: str = producto
         self.precio: float = precio
         self.cantidad: int = cantidad
         self.categoria: str = categoria
         self.duracion: int = duracion
-        self.fecha_inicial_compra: datetime = datetime.strptime(fecha, "%Y-%m-%d")
+        self.esIndispensable: str = esIndispensable
+        self.fecha_inicial_compra: datetime = datetime.strptime(fecha[:10], "%Y-%m-%d")
         self.fechas_compra: list[datetime] = []
         self.stock = []
 
