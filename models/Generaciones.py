@@ -92,7 +92,8 @@ class Generaciones:
         producto_cantidad_precio = {}
         for producto in mejor_individuo.productos:
             if not producto.producto in producto_cantidad_precio:
-                producto_cantidad_precio[producto.producto] = {"cantidad": producto.cantidad * len(producto.fechas_compra), 
+                producto_cantidad_precio[producto.producto] = {"cantidad": producto.cantidad * len(producto.fechas_compra),
+                                                               "cada_compra": producto.cantidad,
                                                                "precio_individual": producto.precio, 
                                                                "categoria": producto.categoria, 
                                                                "fechas_compra":producto.fechas_compra,

@@ -38,7 +38,7 @@ def init(req : object):
     generaciones = Generaciones(montos, productos_dispensables, productos_indispensables, duracion, tamanio, prob_m, prob_c, num_generaciones, pob_init)
     producto_cantidad_precio, mejor_individuo, historial_mejores, historial_promedios, historial_peores= generaciones.ejecutar_algoritmo_genetico()
     
-    response = {'mejor presupuesto': producto_cantidad_precio, 'total': mejor_individuo.calcular_total(), 
+    response = {'mejor_presupuesto': producto_cantidad_precio, 'total': mejor_individuo.calcular_total(), 
                 'presupuesto': sum(montos), 'ahorro': sum(montos) - mejor_individuo.calcular_total(), 
                 "categorias": categorias}
     
@@ -56,7 +56,7 @@ def init(req : object):
     ]
     path = "assets/grafica.png"
     Grafica(datos, path)
-    productos_por_categoria = organize_products_by_category(response['mejor presupuesto'])
+    productos_por_categoria = organize_products_by_category(response['mejor_presupuesto'])
     graficador = GraficaStock(productos_por_categoria)
     graficas = {}
     for categoria in productos_por_categoria:
